@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Tino</title>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      /* Fullscreen Landing Page */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.8);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      .navbar-nav .nav-link {
+        position: relative;
+        color: #fff !important;
+        margin: 0 15px;
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+      }
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #708bd4;
+        transition: width 0.3s ease-in-out;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #708bd4 !important;
+      }
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Profile Section */
+      .profile-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        transform: translateY(-30px);
+      }
+      .profile-img {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .profile-img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Profile Text Spacing & Bold Heading */
+      .profile-text h1 {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .profile-text h2 {
+        margin-bottom: 15px;
+      }
+      .profile-text p {
+        margin-bottom: 20px;
+      }
+      .profile-text .social-icons {
+        margin-top: 20px;
+      }
+
+      /* Social Media Icons */
+      .social-icons a {
+        color: #bbb;
+        font-size: 24px;
+        margin: 0 20px 0 0;
+        display: inline-block;
+        transition: color 0.3s, transform 0.3s;
+      }
+      .social-icons a:hover {
+        color: #708bd4;
+        transform: scale(1.2);
+      }
+
+      /* Typing Effect */
+      h2 span {
+        color: #708bd4;
+        position: relative;
+      }
+      h2 span::before {
+        content: "";
+        height: 30px;
+        width: 2px;
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        background: #708bd4;
+        transform: translateY(-45%);
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Navbar Logo */
+      .navbar-brand img {
+        width: 40px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.3s ease-in-out;
+      }
+      .navbar-brand img:hover {
+        filter: brightness(0) invert(1) drop-shadow(0px 0px 5px #708bd4);
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .profile-container {
+          flex-direction: column;
+          text-align: center;
+          transform: translateY(0);
+        }
+        .profile-img {
+          width: 220px;
+          height: 220px;
+          margin-bottom: 20px;
+        }
+        .social-icons a {
+          margin: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="icon.png" alt="Logo" width="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Certificates</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="container profile-container">
+      <div class="row align-items-center text-center text-lg-start">
+        <!-- Profile Image -->
+        <div class="col-lg-4">
+          <img src="my-photo.png" alt="Tino" class="profile-img" />
+        </div>
+        <!-- Profile Text -->
+        <div class="col-lg-8 profile-text">
+          <h1>Hi, It's <span class="highlight">Valentino</span></h1>
+          <h2>I'm a <span id="dynamic-text">programmer!</span></h2>
+          <p>
+            Hello, welcome to my personal website. I'm Tino, a web developer and
+            a student. This website is one of my projects. Feel free to get in
+            touch. Thanks for visiting!
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const dynamicText = document.getElementById("dynamic-text");
+      const words = ["Programmer", "Photographer", "Student", "Developer"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+        dynamicText.textContent = currentWord.substring(0, charIndex);
+        if (!isDeleting && charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(typeEffect, 150);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(typeEffect, 100);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeEffect, 1200);
+        }
+      }
+      typeEffect();
+    </script>
+  </body>
+</html>
